@@ -20,4 +20,5 @@ mypy-boto3-s3
 botocore
 python-multipart
 python-dotenv
+from_root
 -e .
