@@ -8,6 +8,10 @@ MONGODB_URL_KEY = "MONGODB_URL"
 DATABASE_NAME = "iNeuron"
 COLLECTION_NAME = "travel"
 
+PREROCESSING_OBEJCT_FILE_NAME = "preprocessing.pkl"
+TARGET_COLUMN = "ProdTaken"
+RANDOM_STATE = 42
+
 # common file name
 FILE_NAME: str = "travel.csv"
 TRAIN_FILE_NAME: str = "train.csv"
@@ -29,3 +33,10 @@ Data Validation related constant start with DATA_VALIDATION VAR NAME
 DATA_VALIDATION_DIR_NAME: str = "data_validation"
 DATA_VALIDATION_DRIFT_REPORT_DIR: str = "drift_report"
 DATA_VALIDATION_DRIFT_REPORT_FILE_NAME: str = "report.yaml"
+
+"""
+Data Transformation related constant start with DATA_TRANSFORMATION VAR NAME
+"""
+DATA_TRANSFORMATION_DIR_NAME: str = "data_transformation"
+DATA_TRANSFORMATION_TRANSFORMED_DATA_DIR: str = "transformed"
+DATA_TRANSFORMATION_TRANSFORMED_OBJECT_DIR: str = "transformed_object"

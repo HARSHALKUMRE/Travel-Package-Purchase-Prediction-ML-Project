@@ -46,3 +46,25 @@ categorical_columns:
 
 drop_columns:
   - CustomerID
+
+# for transformation
+
+discrete_columns:
+  - CityTier
+  - NumberOfPersonVisiting
+  - NumberOfFollowups
+  - PreferredPropertyStar
+  - NumberOfTrips
+  - Passport
+  - PitchSatisfactionScore
+  - OwnCar
+  - NumberOfChildrenVisiting
+
+continuous_columns:
+  - Age
+  - DurationOfPitch
+  - MonthlyIncome
+
+transform_columns:
+  - DurationOfPitch
+  - MonthlyIncome
