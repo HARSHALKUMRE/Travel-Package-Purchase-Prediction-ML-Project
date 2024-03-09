@@ -1,0 +1,65 @@
+grid_search:
+  class: GridSearchCV
+  module: sklearn.model_selection
+  params:
+    cv: 3
+    verbose: 3
+model_selection:
+  module_0:
+    class: RandomForestClassifier
+    module: sklearn.ensemble
+    params:
+      max_depth: 5
+      max_features: 5
+      min_samples_split: 2
+      n_estimators: 100
+    search_param_grid:
+      max_depth:
+      - 5
+      - 8
+      - 15
+      - 10
+      max_features:
+      - 5
+      - 7
+      - sqrt
+      - 8
+      min_samples_split:
+      - 2
+      - 8
+      - 15
+      - 20
+      n_estimators:
+      - 100
+      - 200
+      - 500
+      - 1000
+  
+  module_1:
+    class: XGBClassifier
+    module: xgboost
+    params:
+      learning_rate: 0.1
+      max_depth: 5
+      n_estimators: 100
+      colsample_bytree: 0.5
+    search_param_grid:
+      learning_rate:
+      - 0.1
+      - 0.01
+      max_depth:
+      - 5
+      - 8
+      - 12
+      - 20
+      - 30
+      n_estimators:
+      - 100
+      - 200
+      - 300
+      colsample_bytree:
+      - 0.5
+      - 0.8
+      - 1
+      - 0.3
+      - 0.4  
