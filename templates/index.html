@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Travel Package Purchased Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/style.css')}}">
+  </head>
+  <body>
+    <a href="https://github.com/HARSHALKUMRE/Travel-Package-Purchase-Prediction-ML-Project" class="top-left-link" target="_blank">GitHub Repository Link</a>
+    <h1>Travel Package Purchased Prediction</h1>
+    <div class="form-box">
+    <form action="{{url_for('predictRouteClient')}}" method="POST">
+        
+        <div class="form-group">
+            <label for="Age">Age:</label>
+            <input type="text" id="Age" name="Age" placeholder="Enter the age 0 - 80 years" min="0" max="80" required="required">
+        </div>
+    
+        <div class="form-group"> 
+            <label for="CityTier">City Tier:</label>
+            <select id="CityTier" name="CityTier" placeholder="CityTier" required="required">
+            <option value="" disabled selected>Select Your City Tier</option>
+            <option value="1">Tier 1</option>
+            <option value="2">Tier 2</option>
+            <option value="3">Tier 3</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="DurationOfPitch">Duration Of Pitch:</label>
+            <input type="text" id="DurationOfPitch" name="DurationOfPitch" placeholder="Enter in minutes" min="1" max="200" step="1" required="required">
+        </div>
+        
+        <div class="form-group">
+            <label for="NumberOfPersonVisiting">Number Of Person Visiting:</label>
+            <select id="NumberOfPersonVisiting" name="NumberOfPersonVisiting" placeholder="Number Of Person Visiting" required="required">
+              <option value="" disabled selected>Select Number of Person Visiting</option>
+              <option value=1>1</option>
+              <option value=2>2</option>
+              <option value=3>3</option>
+              <option value=4>4</option>
+              <option value=5>5</option>
+              <option value=6>6</option>
+              <option value=7>7</option>
+              <option value=8>8</option>
+            </select>
+        </div>
+      
+        
+      
+        <div class="form-group">
+            <label for="NumberOfFollowups">Number of Followups:</label>
+            <select id="NumberOfFollowups" name="NumberOfFollowups" placeholder="Number Of Followups"
+                required="required">
+                <option value="" disabled selected>Select Number of Followups</option>
+                <option value=1>1</option>
+                <option value=2>2</option>
+                <option value=3>3</option>
+                <option value=4>4</option>
+                <option value=5>5</option>
+                <option value=6>6</option>
+                <option value=7>7</option>
+                <option value=8>8</option>
+                <option value=9>9</option>
+                <option value=10>10</option>
+            </select>
+        </div>         
+      
+        <div class="form-group">
+            <label for="PreferredPropertyStar">Preferred Property Star:</label>
+            <select id="PreferredPropertyStar" name="PreferredPropertyStar" placeholder="Preferred Property Star"
+                required="required">
+                <option value="" disabled selected>Select Preferred Property Star</option>
+                <option value=1>1</option>
+                <option value=2>2</option>
+                <option value=3>3</option>
+                <option value=4>4</option>
+                <option value=5>5</option>
+            </select>
+        </div>
+      
+        <div class="form-group">
+            <label for="NumberOfTrips">Number of Trips:</label>
+            <input type="text" id="NumberOfTrips" name="NumberOfTrips" min="1" max="50" step="1"
+                placeholder="Enter Number of Trips">
+        </div>
+      
+        <div class="form-group">
+            <label for="Passport">Passport Information:</label>
+            <select id="Passport" name="Passport" placeholder="Passport" required="required">
+                <option value="" disabled selected>Do you have a passport?</option>
+                <option value=0>No</option>
+                <option value=1>Yes</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="PitchSatisfactionScore">Pitch Satisfaction Score:</label>
+            <select id="PitchSatisfactionScore" name="PitchSatisfactionScore" placeholder="PitchSatisfactionScore"
+                required="required">
+                <option value="" disabled selected>Select Pitch Satisfaction Score</option>
+                <option value=1>1</option>
+                <option value=2>2</option>
+                <option value=3>3</option>
+                <option value=4>4</option>
+                <option value=5>5</option>
+            </select>
+        </div>
+
+
+        <div class="form-group">
+            <label for="OwnCar">Cars Details:</label>
+            <select id="OwnCar" name="OwnCar" placeholder="OwnCar" required="required">
+                <option value="" disabled selected>Do you own a car?</option>
+                <option value=0>No</option>
+                <option value=1>Yes</option>
+            </select>
+        </div>
+
+
+        <div class="form-group">
+            <label for="NumberOfChildrenVisiting">Number of Children Visiting:</label>
+            <select id="NumberOfChildrenVisiting" name="NumberOfChildrenVisiting"
+                placeholder="NumberOfChildrenVisiting" required="required">
+                <option value="" disabled selected>Number of Children Visiting</option>
+                <option value=0>No</option>
+                <option value=1>1</option>
+                <option value=2>2</option>
+                <option value=3>3</option>
+                <option value=4>4</option>
+                <option value=5>5</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="MonthlyIncome">Monthly Income:</label>
+            <input type="text" id="MonthlyIncome" name="MonthlyIncome" min="1000" max="250000" step="1"
+                placeholder="Enter Monthly Income">
+        </div>
+
+
+        <div class="form-group">
+            <label for="TypeofContact">Type of Contact:</label>
+            <select id="TypeofContact" name="TypeofContact" placeholder="TypeofContact" required="required">
+                <option value="" disabled selected>Select Type of Contact</option>
+                <option value='Company Invited'>Company Invited</option>
+                <option value='Self Enquiry'>Self Enquiry</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="Occupation">Occupation:</label>
+            <select id="Occupation" name="Occupation" placeholder="Occupation" required="required">
+                <option value="" disabled selected>Select Your Occupation</option>
+                <option value='Salaried'>Salaried</option>
+                <option value='Free Lancer'>Free Lancer</option>
+                <option value='Small Business'>Small Business</option>
+                <option value='Large Business'>Large Business</option>
+            </select>
+        </div>
+
+
+        <div class="form-group">
+            <label for="Gender">Gender:</label>
+            <select id="Gender" name="Gender" placeholder="Gender" required="required">
+                <option value="" disabled selected>What's your gender?</option>
+                <option value='Male'>Male</option>
+                <option value='Female'>Female</option>
+            </select>
+        </div>
+
+
+        <div class="form-group">
+            <label for="ProductPitched">Product Pitched:</label>
+            <select id="ProductPitched" name="ProductPitched" placeholder="ProductPitched" required="required">
+                <option value="" disabled selected>Select Product Pitched</option>
+                <option value='Deluxe'>Deluxe</option>
+                <option value='Basic'>Basic</option>
+                <option value='Standard'>Standard</option>
+                <option value='Super Deluxe'>Super Deluxe</option>
+                <option value='King'>King</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="MaritalStatus">Marital Status:</label>
+            <select id="MaritalStatus" name="MaritalStatus" placeholder="MaritalStatus" required="required">
+                <option value="" disabled selected>What's your marital status?</option>
+                <option value="Single">Single</option>
+                <option value="Divorced">Divorced</option>
+                <option value="Married">Married</option>
+                <option value="Unmarried">Unmarried</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="Designation">Designation:</label>
+            <select id="Designation" name="Designation" placeholder="Designation" required="required">
+                <option value="" disabled selected>What's your Designation?</option>
+                <option value='Manager'>Manager</option>
+                <option value='Executive'>Executive</option>
+                <option value='Senior Manager'>Senior Manager</option>
+                <option value='AVP'>AVP</option>
+                <option value='VP'>VP</option>
+            </select>
+        </div>
+
+    
+    
+    
+    <div style="clear:both;"></div>
+      <input type="submit" value="Submit" required />
+    </form>
+    </div>
+    <h2>
+      Predicted Value is : {{ context }}
+    </h2>
+  </body>
+</html>
